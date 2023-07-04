@@ -10,12 +10,26 @@ const createUser = async () => {
 	};
 
 	const response = await axios.post(API_URL + "/postuserinfo", paylaod);
-	//console.log(response.data);
+	console.log(response.data);
+
+    return response.data;
+};
+
+const createUserToDelete = async () => {
+	const paylaod = {
+		name: "Amit",
+		email: "amit@test.com",
+		age: 31,
+	};
+
+	const response = await axios.post(API_URL + "/postuserinfo", paylaod);
+	console.log(response.data);
 
     return response.data;
 };
 
 module.exports ={
     API_URL,
-    createUser
+    createUser,
+    createUserToDelete
 }

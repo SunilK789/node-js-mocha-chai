@@ -48,9 +48,9 @@ exports.getsingleuser = async (req, res) => {
 exports.deleteuser = async (req, res) => {
     try {
         var deleteQuery = {_id: req.params.id};
-        const deleteUser = await User.findByIdAndDelete(deleteQuery);
+        const deletedUser = await User.findByIdAndDelete(deleteQuery);
 
-        res.status(200).json("User deleted..." + deleteUser);
+        res.status(200).json(deletedUser);
     } catch (error) {
         res.status(404).json({error: "User not found!"});
     }

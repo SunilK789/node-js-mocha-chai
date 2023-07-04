@@ -28,7 +28,7 @@ describe("Get User Info", function () {
 
     it("Should have all the property in for the user", async () =>{
         const response = await axios.get(API_URL + "/singleuser/" + newUser._id);
-        console.log(response.data);
+        //console.log(response.data);
 
         expect(response.data.name).to.be.equal("Sunil");
 
