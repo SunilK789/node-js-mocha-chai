@@ -34,3 +34,24 @@ exports.getUserinfo = async (req, res) => {
         res.status(400).json({error: "User not found!"});
     }
 }
+
+exports.getsingleuser = async (req, res) => {
+    try {
+        var userQuery = {_id: req.params.id};
+        const user = await User.findOne(userQuery);
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(404).json({error: "User not found!"});
+    }
+}
+
+exports.deleteuser = async (req, res) => {
+    try {
+        var deleteQuery = {_id: req.params.id};
+        const deleteUser = await User.findByIdAndDelete(deleteQuery);
+
+        res.status(200).json("User deleted..." + deleteUser);
+    } catch (error) {
+        res.status(404).json({error: "User not found!"});
+    }
+}
