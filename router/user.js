@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const {postuserinfo, getUserinfo, getsingleuser, deleteuser} = require("../controller/user");
+const {postuserinfo, getUserinfo, getsingleuser, deleteuser, updateuser} = require("../controller/user");
 
 router.post("/postuserinfo", postuserinfo);
-router.post("/getUserinfo", getUserinfo)
-router.post("/singleuser/:id", getsingleuser);
-router.post("/deleteuser/:id", deleteuser);
+router.get("/getUserinfo", getUserinfo)
+router.get("/singleuser/:id", getsingleuser);
+router.delete("/deleteuser/:id", deleteuser);
+router.put("/updateinfo/:id", updateuser);
 
 
 module.exports = router;
