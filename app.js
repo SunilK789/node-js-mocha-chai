@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //route
 app.use('/api', require("./router/user"));
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Hi this is first API');
 });
 

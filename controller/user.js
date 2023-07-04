@@ -24,4 +24,13 @@ exports.postuserinfo = async (req, res) => {
         console.log(error);
         res.status(400).json({error: "Something went wrong"});
     }
+};
+
+exports.getUserinfo = async (req, res) => {
+    try {
+        const userList = await User.find({}).sort({date: "DESC"});
+        res.status(200).json(userList);
+    } catch (error) {
+        res.status(400).json({error: "User not found!"});
+    }
 }
