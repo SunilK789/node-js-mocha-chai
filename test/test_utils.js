@@ -1,35 +1,36 @@
 const axios = require("axios");
+var Fakerator = require("fakerator");
+var fakerator = Fakerator();
 
 const API_URL ="http://localhost:5000/api";
 
 const createUser = async () => {
-	const paylaod = {
-		name: "Sunil",
-		email: "sunil@test.com",
-		age: 31,
-	};
+	const paylaod = await createPayload();
 
 	const response = await axios.post(API_URL + "/postuserinfo", paylaod);
-	console.log(response.data);
+	//console.log(response.data);
 
     return response.data;
 };
 
-const createUserToDelete = async () => {
+const createPayload = async () =>{
+	var firstName = fakerator.names.firstName();
+	var lastName = fakerator.names.lastName();
+	var fullName = firstName +" " + lastName;
+	var age = fakerator.random.number(20, 35);
+	var email = fakerator.internet.email(firstName, lastName)
+
 	const paylaod = {
-		name: "Amit",
-		email: "amit@test.com",
-		age: 31,
+		name: fullName,
+		email: email,
+		age: age,
 	};
 
-	const response = await axios.post(API_URL + "/postuserinfo", paylaod);
-	console.log(response.data);
-
-    return response.data;
-};
+	return paylaod;
+}
 
 module.exports ={
     API_URL,
     createUser,
-    createUserToDelete
+	createPayload
 }

@@ -64,7 +64,8 @@ exports.updateuser = async (req, res) => {
             $set: {name, email, age}
         });
 
-        res.status(200).json(user);
+        const updatedUser = await User.findOne(updateQuery);
+        res.status(200).json(updatedUser);
     } catch (error) {
         res.status(404).json({error: "User not found to update!"});
     }

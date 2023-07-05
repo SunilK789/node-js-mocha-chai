@@ -5,7 +5,7 @@ router.post("/postuserinfo", postuserinfo);
 router.get("/getUserinfo", getUserinfo)
 router.get("/singleuser/:id", getsingleuser);
 router.delete("/deleteuser/:id", deleteuser);
-router.put("/updateinfo/:id", updateuser);
+router.put("/updateuser/:id", updateuser);
 
 
 module.exports = router;

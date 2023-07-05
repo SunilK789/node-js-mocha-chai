@@ -30,7 +30,7 @@ describe("Get User Info", function () {
         const response = await axios.get(API_URL + "/singleuser/" + newUser._id);
         //console.log(response.data);
 
-        expect(response.data.name).to.be.equal("Sunil");
+        expect(response.data.name).to.be.equal(newUser.name);
 
         response.data.should.have.property("name");
         response.data.should.have.property("email");
