@@ -1,0 +1,348 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 8,
+    "passes": 8,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-07-05T08:10:20.707Z",
+    "end": "2023-07-05T08:10:20.846Z",
+    "duration": 139,
+    "testsRegistered": 8,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "834c70e0-db33-4531-a408-433d9e692631",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [
+        {
+          "title": "\"before all\" hook in \"{root}\"",
+          "fullTitle": "\"before all\" hook in \"{root}\"",
+          "timedOut": false,
+          "duration": 54,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "newUser = await createUser();",
+          "err": {},
+          "uuid": "19453238-f05f-4c7b-b0c3-45bc7e40947c",
+          "parentUUID": "834c70e0-db33-4531-a408-433d9e692631",
+          "isHook": true,
+          "skipped": false
+        },
+        {
+          "title": "\"before all\" hook in \"{root}\"",
+          "fullTitle": "\"before all\" hook in \"{root}\"",
+          "timedOut": false,
+          "duration": 7,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "newUser = await createUser();",
+          "err": {},
+          "uuid": "c8b38c82-4f3c-46fd-83c7-c2663577eade",
+          "parentUUID": "834c70e0-db33-4531-a408-433d9e692631",
+          "isHook": true,
+          "skipped": false
+        },
+        {
+          "title": "\"before all\" hook in \"{root}\"",
+          "fullTitle": "\"before all\" hook in \"{root}\"",
+          "timedOut": false,
+          "duration": 5,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "newUser = await createUser();\n    updatedUser = await createPayload();",
+          "err": {},
+          "uuid": "a8685149-7737-407c-adb7-77900e996a11",
+          "parentUUID": "834c70e0-db33-4531-a408-433d9e692631",
+          "isHook": true,
+          "skipped": false
+        }
+      ],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5822a0f5-dd8d-4b13-abe9-485a47b5e517",
+          "title": "Create new user",
+          "fullFile": "D:\\Demo Code\\ReactDemo\\node-js-mocha-chai\\test\\create_user.js",
+          "file": "\\test\\create_user.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a new user",
+              "fullTitle": "Create new user Create a new user",
+              "timedOut": false,
+              "duration": 6,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var firstName = fakerator.names.firstName();\nvar lastName = fakerator.names.lastName();\nvar fullName = firstName +\" \" + lastName;\nvar age = fakerator.random.number(20, 35);\nvar email = fakerator.internet.email(firstName, lastName)\nconst paylaod = {\n\tname: fullName,\n\temail: email,\n\tage: age,\n};\nconst response = await axios.post(API_URL + \"/postuserinfo\", paylaod);\n//console.log(response.data);\nexpect(response.data.name).to.be.equal(fullName);\nexpect(response.data.email).to.be.equal(email);\nexpect(response.data.age).to.be.equal(age);\nresponse.data.should.have.property(\"name\");\nresponse.data.should.have.property(\"email\");\nresponse.data.should.have.property(\"age\");\nexpect(response.status).to.be.equal(201);\nexpect(response.data).to.be.an(\"object\");",
+              "err": {},
+              "uuid": "fe36633f-78e3-4c56-a293-1960a54418ef",
+              "parentUUID": "5822a0f5-dd8d-4b13-abe9-485a47b5e517",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fe36633f-78e3-4c56-a293-1960a54418ef"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "db015453-f4aa-401d-8960-dfd568dffa08",
+          "title": "Delete user from database",
+          "fullFile": "D:\\Demo Code\\ReactDemo\\node-js-mocha-chai\\test\\delete_user.js",
+          "file": "\\test\\delete_user.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Delete Single User",
+              "fullTitle": "Delete user from database Delete Single User",
+              "timedOut": false,
+              "duration": 9,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await axios.delete(API_URL + \"/deleteuser/\" + newUser._id);\nexpect(response.status).to.be.equal(200);\n//expect(response.data).to.be.equal(\"object\");",
+              "err": {},
+              "uuid": "376e7ec2-f71d-4211-af96-5292f763b736",
+              "parentUUID": "db015453-f4aa-401d-8960-dfd568dffa08",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "376e7ec2-f71d-4211-af96-5292f763b736"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "0a5184c8-3c04-428b-8cc8-87add043a4ed",
+          "title": "Get User Info",
+          "fullFile": "D:\\Demo Code\\ReactDemo\\node-js-mocha-chai\\test\\get_user.js",
+          "file": "\\test\\get_user.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get all users list",
+              "fullTitle": "Get User Info Get all users list",
+              "timedOut": false,
+              "duration": 12,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await axios.get(API_URL + \"/getUserinfo\");\nexpect(response.status).to.be.equal(200);\nexpect(response.data).to.be.an(\"array\");\n//console.log(response.status);",
+              "err": {},
+              "uuid": "1b8fe462-8060-4e23-b4b8-c334d2f0e533",
+              "parentUUID": "0a5184c8-3c04-428b-8cc8-87add043a4ed",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get single user",
+              "fullTitle": "Get User Info Get single user",
+              "timedOut": false,
+              "duration": 6,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await axios.get(API_URL + \"/singleuser/\" + newUser._id);\nexpect(response.status).to.be.equal(200);\nexpect(response.data).to.be.an(\"object\");\n//console.log(response.data);",
+              "err": {},
+              "uuid": "9369ce24-e38c-42f7-9a01-a202d3c51746",
+              "parentUUID": "0a5184c8-3c04-428b-8cc8-87add043a4ed",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should have all the property in for the user",
+              "fullTitle": "Get User Info Should have all the property in for the user",
+              "timedOut": false,
+              "duration": 5,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await axios.get(API_URL + \"/singleuser/\" + newUser._id);\n//console.log(response.data);\nexpect(response.data.name).to.be.equal(newUser.name);\nresponse.data.should.have.property(\"name\");\nresponse.data.should.have.property(\"email\");\nresponse.data.should.have.property(\"age\");\nexpect(response.status).to.be.equal(200);\n\t\texpect(response.data).to.be.an(\"object\");",
+              "err": {},
+              "uuid": "db7ab238-1690-415c-b06d-f5312af8acea",
+              "parentUUID": "0a5184c8-3c04-428b-8cc8-87add043a4ed",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1b8fe462-8060-4e23-b4b8-c334d2f0e533",
+            "9369ce24-e38c-42f7-9a01-a202d3c51746",
+            "db7ab238-1690-415c-b06d-f5312af8acea"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 23,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "c7d13cfb-909b-4061-9d3b-0edf029cba84",
+          "title": "Update user info",
+          "fullFile": "D:\\Demo Code\\ReactDemo\\node-js-mocha-chai\\test\\update_user.js",
+          "file": "\\test\\update_user.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Update Single User All the Information Together",
+              "fullTitle": "Update user info Update Single User All the Information Together",
+              "timedOut": false,
+              "duration": 10,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//const updatedUser = await createPayload();\n       //console.log(newUser);\n       const response = await axios.put(API_URL + \"/updateuser/\" + newUser._id, updatedUser);        \n       //console.log(updatedUser);\n       //console.log(response.data);\n       expect(response.data.name).to.be.equal(updatedUser.name);\n\t\texpect(response.data.email).to.be.equal(updatedUser.email);\n\t\texpect(response.data.age).to.be.equal(updatedUser.age);\n\n\t\tresponse.data.should.have.property(\"name\");\n\t\tresponse.data.should.have.property(\"email\");\n\t\tresponse.data.should.have.property(\"age\");\n\n\t\texpect(response.status).to.be.equal(200);\n\t\texpect(response.data).to.be.an(\"object\");",
+              "err": {},
+              "uuid": "3f9fbabb-5c66-4875-8a76-e0780a021f58",
+              "parentUUID": "c7d13cfb-909b-4061-9d3b-0edf029cba84",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Update Single User Only Name",
+              "fullTitle": "Update user info Update Single User Only Name",
+              "timedOut": false,
+              "duration": 7,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const updatedName = {\n           ...newUser,\n           name: updatedUser.name\n       }\n       const response = await axios.put(API_URL + \"/updateuser/\" + newUser._id, updatedName); \n       expect(response.data.name).to.be.equal(updatedUser.name);\n\t\texpect(response.data.email).to.be.equal(newUser.email);\n\t\texpect(response.data.age).to.be.equal(newUser.age);\n\n\t\tresponse.data.should.have.property(\"name\");\n\t\tresponse.data.should.have.property(\"email\");\n\t\tresponse.data.should.have.property(\"age\");\n\n\t\texpect(response.status).to.be.equal(200);\n\t\texpect(response.data).to.be.an(\"object\");",
+              "err": {},
+              "uuid": "9721ddd1-a1bd-440e-92ec-3fab80a0ad1a",
+              "parentUUID": "c7d13cfb-909b-4061-9d3b-0edf029cba84",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Update Single User Only Email",
+              "fullTitle": "Update user info Update Single User Only Email",
+              "timedOut": false,
+              "duration": 5,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const updatedName = {\n           ...newUser,\n           email: updatedUser.email\n       }\n       const response = await axios.put(API_URL + \"/updateuser/\" + newUser._id, updatedName); \n       expect(response.data.name).to.be.equal(newUser.name);\n\t\texpect(response.data.email).to.be.equal(updatedUser.email);\n\t\texpect(response.data.email).not.to.be.equal(newUser.email);\n\t\texpect(response.data.age).to.be.equal(newUser.age);\n\n\t\tresponse.data.should.have.property(\"name\");\n\t\tresponse.data.should.have.property(\"email\");\n\t\tresponse.data.should.have.property(\"age\");\n\n\t\texpect(response.status).to.be.equal(200);\n\t\texpect(response.data).to.be.an(\"object\");",
+              "err": {},
+              "uuid": "a38b838a-9061-4f43-ad76-79bafdef0269",
+              "parentUUID": "c7d13cfb-909b-4061-9d3b-0edf029cba84",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3f9fbabb-5c66-4875-8a76-e0780a021f58",
+            "9721ddd1-a1bd-440e-92ec-3fab80a0ad1a",
+            "a38b838a-9061-4f43-ad76-79bafdef0269"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 22,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
